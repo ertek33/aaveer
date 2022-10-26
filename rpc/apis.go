@@ -102,6 +102,11 @@ func evmSpaceApis(clientProvider *node.EthClientProvider, option ...EthAPIOption
 			Service:   mustNewEthAPI(clientProvider, option...),
 			Public:    true,
 		}, {
+			Namespace: "debug",
+			Version:   "1.0",
+			Service:   &debugAPI{},
+			Public:    true,
+		}, {
 			Namespace: "web3",
 			Version:   "1.0",
 			Service:   &web3API{},

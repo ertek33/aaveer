@@ -28,7 +28,7 @@ rpc:
 ethrpc:
   # Available exposed modules are `eth`, `web3`, `net`, `trace`, `parity`,
   # if left empty all public APIs will be exposed.
-  exposedModules: []
+  exposedModules: [eth, web3, net, debug]
   # Served HTTP endpoint
   endpoint: ":28545"
   # Served websocket endpoint

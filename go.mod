@@ -15,6 +15,7 @@ require (
 	github.com/montanaflynn/stats v0.6.6
 	github.com/openweb3/go-rpc-provider v0.2.9
 	github.com/openweb3/web3go v0.2.0
+	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/royeo/dingrobot v1.0.1-0.20191230075228-c90a788ca8fd
 	github.com/sirupsen/logrus v1.8.1
@@ -32,4 +33,4 @@ require (
 // replace github.com/Conflux-Chain/go-conflux-sdk => ../go-conflux-sdk
 // replace github.com/Conflux-Chain/web3pay-service => ../web3pay-service
 
-replace github.com/openweb3/web3go v0.2.0 => github.com/scroll-tech/web3go v0.0.0-20221006003405-dc5f08fb1c44
+replace github.com/openweb3/web3go v0.2.0 => ../web3go
