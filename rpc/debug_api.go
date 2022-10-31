@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"encoding/json"
 	"errors"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 	"github.com/patrickmn/go-cache"
@@ -34,7 +35,7 @@ type debugAPI struct{}
 func (api *debugAPI) TraceTransaction(ctx context.Context, blockHash common.Hash, opts interface{}) (*web3Types.TraceTransactionResult, error) {
 	remoteAddr := remoteAddrFromContext(ctx)
 	logrus.Info("remoteAddr: ", remoteAddr)
-	valid, err := isIPValid(remoteAddr)
+	valid, err := isIPValid(strings.ToLower(remoteAddr))
 	if err != nil {
 		return nil, err
 	}
