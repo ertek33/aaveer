@@ -60,7 +60,7 @@ func isIPValid(ip string) (bool, error) {
 		return true, nil
 	}
 
-	if ip == "" {
+	if ip == "unknown_ip" {
 		return false, nil
 	}
 
@@ -71,33 +71,33 @@ func isIPValid(ip string) (bool, error) {
 		return valid.(bool), nil
 	}
 
-    debuggerListURL, err := url.JoinPath(whiteListURL, "api/get_debugger")
-    if err != nil {
-        return false, err
-    }
+	debuggerListURL, err := url.JoinPath(whiteListURL, "api/get_debugger")
+	if err != nil {
+		return false, err
+	}
 
-    params := url.Values{}
-    Url, err := url.Parse(debuggerListURL)
-    if err != nil {
-        return false, err
-    }
+	params := url.Values{}
+	Url, err := url.Parse(debuggerListURL)
+	if err != nil {
+		return false, err
+	}
 
-    params.Set("accept", "application/json")
+	params.Set("accept", "application/json")
 	params.Set("ip", ip)
 	Url.RawQuery = params.Encode()
 	urlPath := Url.String()
-    resp, err := http.Get(urlPath)
-    defer resp.Body.Close()
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        return false, err
-    }
+	resp, err := http.Get(urlPath)
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return false, err
+	}
 
 	var data map[string]interface{}
 	err = json.Unmarshal(body, &data)
-    if err != nil {
-        return false, err
-    }
+	if err != nil {
+		return false, err
+	}
 
 	debuggerList, ok := data["debugger"]
 	if !ok {
