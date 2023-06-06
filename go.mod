@@ -33,4 +33,4 @@ require (
 // replace github.com/Conflux-Chain/go-conflux-sdk => ../go-conflux-sdk
 // replace github.com/Conflux-Chain/web3pay-service => ../web3pay-service
 
-replace github.com/openweb3/web3go v0.2.0 => github.com/scroll-tech/web3go v0.0.0-20230526005131-5b0384cfab44
+replace github.com/openweb3/web3go => github.com/scroll-tech/web3go v0.0.0-20230606192647-e3d65c45d2e4
