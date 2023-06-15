@@ -13,7 +13,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/hashicorp/golang-lru v0.5.5-0.20210104140557-80c98217689d
 	github.com/montanaflynn/stats v0.6.6
-	github.com/openweb3/go-rpc-provider v0.2.9
+	github.com/openweb3/go-rpc-provider v0.3.1
 	github.com/openweb3/web3go v0.2.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
